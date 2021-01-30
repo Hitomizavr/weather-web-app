@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+    outline:none;
+}
+
+html,
+body,
+#root {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    background-color:#fbfbfe;
+    
+}
+
+li {
+    list-style: none;
+}
+
+/* ОСНОВНОЙ КОНТЕНТ НА СТРАНИЦЕ */
+.content {
+  flex:1;
+  display: flex;
+    align-content: center;
+    align-items: center;
+ }
+
+            /* РОДИТЕЛЬ ВСЕЙ ПАНЕЛИ С ПОГОДОЙ */
+
+.weather-form {
+    padding:60px;
+    width:32vw;
+    margin: 0 auto;
+    background:#fff;
+    border-radius:16px;
+    margin-bottom: 100px;
+    box-shadow: 0 12px 18px 2px rgba(34,0,51,.04),0 6px 22px 4px rgba(7,48,114,.12),0 6px 10px -4px rgba(14,13,26,.12);
+}
+
+            /* РОДИТЕЛЬ ИНФОРМАЦИОННОЙ ДОСКИ */
+
+.infoWeather {
+    color:#535750;
+    padding-top: 34px;
+}
+
+            /* ИНФОРМАЦИОННАЯ ДОСКА */
+
+.info-we, .info-we1 {
+    text-align: center;
+}
+
+.info-we {
+    font-size: 26px;
+}
+
+
+            /* input ВВОД ГОРОДА */
+.inp-city {
+     
+    height: 50px;
+    width: 25vw;
+    border-radius:4px;
+    border:1px solid rgba(12,12,13,.3);
+    font-size: 16px;
+    margin-bottom: 30px;
+    padding: 0 0 0 16px;
+}
+
+                    /* АНИМАЦИЯ КНОПКИ ПРОДОЛЖЕНИЯ */
+
+@keyframes pulse {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      33% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(3);
+        opacity: 0;
+      }
+}
+
+.btn-next {
+                    /* button next КНОПКА ПРОДОЛЖЕНИЯ */
+    background: #799365;
+    box-shadow: 0 3px 2px 0 rgba(0,0,0,0.1);
+    border-radius: 5px;
+    color: #fff;
+    border:0;
+    padding: 0 30px;
+    text-align: center;
+    cursor:pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background .3s, transform .3s, box-shadow .3s;
+    will-change: transform;
+    font-size: 17px;
+    user-select: none;
+    height: 55px;
+    width: 50%;
+    font-weight: bold;
+    text-shadow: 0 0 5px hsl(100, 4%, 29%);
+}
+
+.btn-next:hover {
+    background: #6ba23f;
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2);
+    transform: translate3d(0, -2px, 0);
+  }
+.btn-next:active {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    transform: translate3d(0, 1px, 0);
+  }
+
+.pulse {
+    position: relative;
+  }
+
+.pulse:before, .pulse:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    margin: auto;
+}
+.pulse:before {
+    animation: pulse 1.5s infinite linear;
+}
+.pulse:after {
+    animation: pulse 2s .4s infinite linear;
+}
+.pulse:hover:before, .pulse:hover:after {
+    display: none;
+  }
+                /*  РОДИТЕЛЬ КНОПКИ И ВВОДА */
+.form-we-css {
+    text-align: center;
+}
+
+
+                /* НАЧАЛО ХЕДЕРА */
+header {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding:0 30%;
+    background-color: #484c46;
+    margin-bottom:60px;
+}
+
+header a {
+    display: inline-block;
+    padding:0 20px;
+    font-size: 16px;
+    color: #DADAD8;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 300ms linear;
+    line-height: 50px;
+    text-align: center;
+}
+
+header a.logo {
+    font-size:25px;
+    font-weight: bold;
+    color:#acd28d;
+}
+
+header a.logo:hover {
+    color:#ffffff;
+}
+
+.header-right a:hover {
+    background-color:#676767;
+    color: #ffffff;
+}
+
+.header-right a.active {
+    background-color: #8C9C7F;
+    color:#484C46 ;
+  }
+
+                    /* НАЧАЛО ФУТЕРА */
+
+footer {
+   background-color:#404040;
+   width: 100%;
+   clear: both;
+   color: #fff;
+   margin:0;
+   padding-top:24px;
+   display: flex;
+   font-size: 18px;
+   
+}
+
+.footContainer {
+    width:1875px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.footSections {
+    display: grid;
+    grid-template-columns: 170px 170px 170px;
+    grid-template-rows: 200px;
+    grid-gap: 10rem;
+    padding: 40px 0px 50px 0px;
+}
+
+.footerList li  {
+    text-decoration: none;
+    text-align: left;
+    padding: 0;
+    margin:0;
+}
+
+.footSection a {
+    text-decoration: none;
+    color:#c0c0c0; /* Цвет ссылок */
+}
+
+ul.footerList   {
+    padding: 0;
+    margin:0;
+}
+
+.footerList_item {
+    padding-bottom: 10px;
+}
+
+.footer-heading {
+    background-color: #717171;
+    text-align: center;
+    padding: 9px 9px 9px 9px;
+    font-size: 18px;
+}
+
+/* Когда селектор пробел и еще один селектор,
+это означает обращение к дочернему элементу дом-дерева
+а когда селектор.класс значит наоборот */
+
+
+                        /* СТИЛИЗАЦИЯ ВЫВОДА ПОГОДЫ */
+
+.outWeather {
+    text-align: center;
+    padding: 15px;
+    font-size: 21px;
+    color: #484c46;
+}
+
+                     /* 404 */
+.pages404 {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background: green;
+    box-sizing: border-box;
+    color:#535750;
+}
+.pages404 h1 {
+    font-size: 32px;
+}
+.pages404 p {
+    font-size: 22px;;
+}
+
+/* Всплывающие уведомления */
+.toasts {
+    min-width: 400px;
+    max-width: 450px;
+    position: fixed;
+    bottom: 0;
+    left: 10px;
+    z-index: 99999;
+}
+
+.toast {
+    position: relative;
+    padding: 15px 15px 15px 50px;
+    border-width: 3px;
+    border-style: solid;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 100ms ease-in-out, color 100ms ease-in-out, opacity 200ms ease-in;
+}
+
+.toast:hover {
+    color: #fff;
+}
+
+.toast-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 55px;
+    height: 100%;
+}
+    /* Разные типы уведомлений (danger, info, success) */
+
+.toast-icon .icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    margin-top: -9px;
+}
+
+.toast-danger {
+    border-color: #a94442;
+    color: #e06d6b;
+    box-shadow: 0 2px 3px rgba(169, 68, 66, .3);
+}
+
+.toast-danger:hover {
+    background-color: #a94442;
+}
+
+.toast-success {
+    border-color: #3c763d;
+    color: #3c763d;
+    box-shadow: 0 2px 3px rgba(60, 118, 61, .3);
+}
+
+.toast-success:hover {
+    background-color: #3c763d;
+}
+
+.toast-info {
+    border-color: #1b80e5;
+    color: #1b80e5;
+    box-shadow: 0 2px 3px rgba(27, 128, 229, .3);
+}
+
+.toast-info:hover {
+    background-color: #1b80e5;
+}
+
+.toast-container {
+    overflow: hidden;
+    transition: max-height 300ms ease-in-out;
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+}
+
+.fadeOutUp {
+    animation-duration: 400ms;
+    animation-fill-mode: both;
+    animation-name: fadeOutUp;
+}
+
+
+.formus {
+    margin: 0 auto;
+    padding-bottom: 40px ;
+    width: 450px;
+    
+}
+
+.formus h1 {
+    color: #484C46;
+    text-align: center;
+    font-size: 54px;
+}
+
+.formus input {
+    border-radius:4px;
+    font-size: 15px;
+    border:1px solid #ddd;
+    padding: 0 16px;
+    width: 100%;
+    height: 50px;
+}
+
+
+.formus p {
+    color: #484C46;
+    font-weight: 600;
+}
+
+.next-conts {
+    margin-top: 30px;
+    width: 482px;
+    height: 50px;
+    border-radius:4px;
+    background: #484C46;
+    color: #ABD28C;
+    font-size: 17px;
+    border: 0;
+    transition: background 300ms;
+}
+
+textarea {
+    font-family: 'Roboto', sans-serif;
+    resize: vertical;
+    width: 100%;
+    border-radius:4px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    padding: 16px;
+    height: 100px;
+}
+
+
+.formus input:focus, textarea:focus {
+    border-color: #8C9C7F;
+}
+
+.next-conts:hover {
+    background: #8C9C7F;
+}
+.next-conts:active {
+    background: #484C46;
+}
+
+.about-container {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.about-container__title {
+    font-weight: bold;
+}
